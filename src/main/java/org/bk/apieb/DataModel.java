@@ -4,6 +4,16 @@ public class DataModel {
     private String current;
     private String voltage;
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice() {
+        this.price =  new String(String.valueOf(Integer.parseInt(current)*Integer.parseInt(voltage)*0.1));
+    }
+
+    private String price;
+
     public String getCurrent() {
         return current;
     }
