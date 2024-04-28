@@ -2,6 +2,7 @@ package org.bk.apieb;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +18,13 @@ import java.net.URL;
 @RequestMapping("/api")
 public class DataController {
 
+    @Autowired
+    PaymentController pc;
+
     @PostMapping("/receive-data")
     public ResponseEntity<String> receiveDataFromESP32(@RequestBody DataModel requestData) {
-        // Process the received data from ESP32
         System.out.println("Received data from ESP32: " + requestData);
-
-        sendData(requestData);
+        pc.UpdateData(requestData);
         return ResponseEntity.ok("Data received successfully");
     }
 

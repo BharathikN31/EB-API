@@ -10,9 +10,10 @@ public class DataModel {
         return price;
     }
 
-    public void setPrice() {
+    public void setPrice(String price) {
 
-        this.price =  String.format(Locale.US, "%.2f", Integer.parseInt(current)*Integer.parseInt(voltage)*0.1);
+//        this.price =  String.format(Locale.US, "%.2f", Integer.parseInt(current)*Integer.parseInt(voltage)*0.1);
+        this.price =  price;
     }
 
     private String price;
