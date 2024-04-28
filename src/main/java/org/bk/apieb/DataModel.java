@@ -1,5 +1,7 @@
 package org.bk.apieb;
 
+import java.util.Locale;
+
 public class DataModel {
     private String current;
     private String voltage;
