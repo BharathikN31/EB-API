@@ -29,6 +29,7 @@ public class PaymentController {
     @GetMapping("/paymentData")
     public DataModel getPaymentData() {
         // Mocked data - ideally, this would come from a service or database
+        System.out.println("Data Requested By PW");
         Random random = new Random();
 //        int voltage = random.nextInt(900) + 100;
         int voltage = Integer.parseInt(this.voltageView);
@@ -54,5 +55,6 @@ public class PaymentController {
             this.currentView=data.getCurrent();
             this.voltageView=data.getVoltage();
             this.priceView=data.getPrice();
+            System.out.println("Data Updated");
     }
 }
