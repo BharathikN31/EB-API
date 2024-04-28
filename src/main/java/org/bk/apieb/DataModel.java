@@ -3,8 +3,8 @@ package org.bk.apieb;
 import java.util.Locale;
 
 public class DataModel {
-    private String current;
-    private String voltage;
+    private String current = "0";
+    private String voltage= "0";
 
     public String getPrice() {
         return price;
@@ -16,7 +16,7 @@ public class DataModel {
         this.price =  price;
     }
 
-    private String price;
+    private String price = "0";
 
     public String getCurrent() {
         return current;

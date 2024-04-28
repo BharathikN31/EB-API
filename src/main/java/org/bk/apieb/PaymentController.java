@@ -9,9 +9,9 @@ import java.util.Random;
 
 @RestController
 public class PaymentController {
-    private String currentView;
-    private String voltageView;
-    private String priceView;
+    private static String currentView="0";
+    private static String voltageView ="0";
+    private String priceView = "0";
 
     HashMap<String, UserData> data = new HashMap<>();
 
@@ -32,10 +32,10 @@ public class PaymentController {
         System.out.println("Data Requested By PW");
         Random random = new Random();
 //        int voltage = random.nextInt(900) + 100;
-        int voltage = Integer.parseInt(this.voltageView);
+//        int voltage = Integer.parseInt(voltageView);
 //        int current = random.nextInt(900) + 100;
-        int current =  Integer.parseInt(this.currentView);
-        DataModel paymentData = new DataModel(String.valueOf(current), String.valueOf(voltage));
+//        int current =  Integer.parseInt(currentView);
+        DataModel paymentData = new DataModel(String.valueOf(12), String.valueOf(12));
         System.out.println("!!!!PowerWise App is requesting Data!!!! @ " + System.currentTimeMillis());
         System.out.println("Current : " + paymentData.getCurrent());
         System.out.println("Voltage : " + paymentData.getVoltage());
@@ -52,9 +52,9 @@ public class PaymentController {
     }
 
     public void UpdateData(DataModel data){
-            this.currentView=data.getCurrent();
-            this.voltageView=data.getVoltage();
-            this.priceView=data.getPrice();
+            currentView=data.getCurrent();
+            voltageView=data.getVoltage();
+            priceView=data.getPrice();
             System.out.println("Data Updated");
     }
 }
