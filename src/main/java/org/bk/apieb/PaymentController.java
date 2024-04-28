@@ -32,9 +32,9 @@ public class PaymentController {
         System.out.println("Data Requested By PW");
         Random random = new Random();
 //        int voltage = random.nextInt(900) + 100;
-        int voltage = Integer.parseInt(voltageView);
+        double voltage = Double.parseDouble(voltageView);
 //        int current = random.nextInt(900) + 100;
-        int current =  Integer.parseInt(currentView);
+        double current =  Double.parseDouble(currentView);
         DataModel paymentData = new DataModel(String.valueOf(currentView), String.valueOf(voltageView));
         System.out.println("!!!!PowerWise App is requesting Data!!!! @ " + System.currentTimeMillis());
         System.out.println("Current : " + paymentData.getCurrent());
@@ -50,7 +50,7 @@ public class PaymentController {
     public UserData getUser(@RequestParam String email) {
         return data.get(email);
     }
-
+//    @GetMapping("/user1")
     public void UpdateData(DataModel data){
             currentView=data.getCurrent();
             voltageView=data.getVoltage();
