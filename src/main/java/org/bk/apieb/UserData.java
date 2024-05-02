@@ -1,5 +1,8 @@
 package org.bk.apieb;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class UserData {
     public void setName(String name) {
         Name = name;
@@ -32,7 +35,24 @@ public class UserData {
     public String ConsumerNo;
     public String MeterNo;
     public String Address;
+    public String Term;
+    public String getTerm() {
+        setTerm();
+        return Term;}
+    public void setTerm() {
+        LocalDate today = null;
 
+        today = LocalDate.now();
+
+
+        // Subtract 2 months from today's date
+        LocalDate twoMonthsBefore = today.minusMonths(2);
+
+        // Format the date
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        Term =today+" to "+ twoMonthsBefore.format(formatter);
+
+    }
     public String getName() {
         return Name;
     }
