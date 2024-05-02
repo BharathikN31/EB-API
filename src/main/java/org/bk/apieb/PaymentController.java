@@ -23,7 +23,7 @@ public class PaymentController {
         userData.setConsumerNo("283111102003");
         userData.setMeterNo("0401");
         userData.setAddress("7,DLF IT Park,TN-98");
-        userData.setTerm();
+        userData.getTerm();
         data.put("bharathi@pw.org", userData);
     }
 
