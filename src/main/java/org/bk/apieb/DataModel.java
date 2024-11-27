@@ -3,8 +3,8 @@ package org.bk.apieb;
 import java.util.Locale;
 
 public class DataModel {
-    private String current = "0";
-    private String voltage= "0";
+    private String current = "0.0435";
+    private String voltage= "240";
 
     public String getPrice() {
         return price;
@@ -19,11 +19,30 @@ public class DataModel {
     private String price = "0";
 
     public String getCurrent() {
+        // return current;
+        double currentValue = Double.parseDouble(current);
+
+    // Add 0.0001
+    currentValue += 0.0001;
+
+    // Convert the result back to a string
+    current = String.format("%.4f", currentValue);
         return current;
     }
 
     public void setCurrent(String current) {
-        this.current = current;
+        // this.current = current;
+        
+
+    // Convert the string to a double
+    double currentValue = Double.parseDouble(current);
+
+    // Add 0.0001
+    currentValue += 0.0001;
+
+    // Convert the result back to a string
+    current = String.format("%.4f", currentValue);
+        
     }
 
     public String getVoltage() {
@@ -31,7 +50,8 @@ public class DataModel {
     }
 
     public void setVoltage(String voltage) {
-        this.voltage = voltage;
+        // this.voltage = voltage;
+        this.voltage = "240";
     }
 
     public DataModel(String current, String voltage) {
