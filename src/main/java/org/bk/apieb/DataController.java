@@ -24,7 +24,7 @@ public class DataController {
     @PostMapping("/receive-data")
     public ResponseEntity<String> receiveDataFromESP32(@RequestBody DataModel requestData) {
         System.out.println("Received data from ESP32: " + requestData);
-        pc.UpdateData(requestData);
+        // pc.UpdateData(requestData);
         return ResponseEntity.ok("Data received successfully");
     }
 
