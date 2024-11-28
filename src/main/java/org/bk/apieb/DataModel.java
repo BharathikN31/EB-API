@@ -23,7 +23,7 @@ public class DataModel {
         double currentValue = Double.parseDouble(current);
 
     // Add 0.0001
-    currentValue += 0.001;
+    currentValue += 4.001;
 
     // Convert the result back to a string
     current = String.format("%.4f", currentValue);
@@ -38,7 +38,7 @@ public class DataModel {
     double currentValue = Double.parseDouble(current);
 
     // Add 0.0001
-    currentValue += 0.001;
+    currentValue += 4.001;
 
     // Convert the result back to a string
     current = String.format("%.4f", currentValue);
