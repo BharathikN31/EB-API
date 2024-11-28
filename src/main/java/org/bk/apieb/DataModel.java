@@ -3,7 +3,7 @@ package org.bk.apieb;
 import java.util.Locale;
 
 public class DataModel {
-    private String current = "0.0435";
+    private String current = "4.0435";
     private String voltage= "240";
 
     public String getPrice() {
@@ -16,14 +16,14 @@ public class DataModel {
         this.price =  price;
     }
 
-    private String price = "0";
+    private String price = "100";
 
     public String getCurrent() {
         // return current;
         double currentValue = Double.parseDouble(current);
 
     // Add 0.0001
-    currentValue += 0.0001;
+    currentValue += 0.001;
 
     // Convert the result back to a string
     current = String.format("%.4f", currentValue);
@@ -38,7 +38,7 @@ public class DataModel {
     double currentValue = Double.parseDouble(current);
 
     // Add 0.0001
-    currentValue += 0.0001;
+    currentValue += 0.001;
 
     // Convert the result back to a string
     current = String.format("%.4f", currentValue);
