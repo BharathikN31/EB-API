@@ -10,7 +10,7 @@ import java.util.Random;
 @RestController
 public class PaymentController {
     private static String currentView="0";
-    private static String voltageView ="0";
+    private static String voltageView ="240";
     private String priceView = "0";
 
     HashMap<String, UserData> data = new HashMap<>();
