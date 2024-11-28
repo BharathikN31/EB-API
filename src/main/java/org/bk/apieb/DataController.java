@@ -23,8 +23,19 @@ public class DataController {
 
     @PostMapping("/receive-data")
     public ResponseEntity<String> receiveDataFromESP32(@RequestBody DataModel requestData) {
+        DataModel dataModel = new DataModel("4.0435", "240");
+
+        // Set values using setter methods
+        dataModel.setCurrent("4.0500"); // Incremented by 0.001 in setter logic
+        dataModel.setVoltage("240");   // Hardcoded to "240" in setter logic
+        dataModel.setPrice("150");     // Directly set price
+
+        // Get and print the values
+        System.out.println("Current: " + dataModel.getCurrent());
+        System.out.println("Voltage: " + dataModel.getVoltage());
+        System.out.println("Price: " + dataModel.getPrice());
         System.out.println("Received data from ESP32: " + requestData);
-        // pc.UpdateData(requestData);
+        pc.UpdateData(dataModel);
         return ResponseEntity.ok("Data received successfully");
     }
 
